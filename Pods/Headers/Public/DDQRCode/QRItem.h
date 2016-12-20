@@ -1,0 +1,1 @@
+../../../DDQRCode/DDQRCode/Classes/QRItem.h

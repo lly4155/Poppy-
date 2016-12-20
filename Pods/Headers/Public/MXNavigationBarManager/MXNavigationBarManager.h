@@ -1,0 +1,1 @@
+../../../MXNavigationBarManager/MXNavigationBarManager/MXNavigationBarManager.h

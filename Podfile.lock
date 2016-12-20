@@ -1,0 +1,70 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - Bugrpt (1.1.7.2)
+  - CBStoreHouseRefreshControl (1.0)
+  - DDQRCode (1.0.1)
+  - DZNEmptyDataSet (1.8.1)
+  - IQKeyboardManager (4.0.7)
+  - MBProgressHUD (1.0.0)
+  - MGSwipeTableCell (1.5.6)
+  - MJExtension (3.0.13)
+  - MJRefresh (3.1.12)
+  - MXNavigationBarManager (1.1)
+  - pop (1.0.9)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+  - TBIconTransitionKit (1.0.2)
+  - XHLaunchAd (2.1.9)
+
+DEPENDENCIES:
+  - AFNetworking
+  - Bugrpt
+  - CBStoreHouseRefreshControl
+  - DDQRCode
+  - DZNEmptyDataSet
+  - IQKeyboardManager
+  - MBProgressHUD (~> 1.0.0)
+  - MGSwipeTableCell
+  - MJExtension
+  - MJRefresh
+  - MXNavigationBarManager
+  - pop
+  - SDWebImage
+  - TBIconTransitionKit
+  - XHLaunchAd
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Bugrpt: 73f1cf6c820e202650c208e64d4a7f739544285e
+  CBStoreHouseRefreshControl: a814bd725e74ff4c1e8dd96eb02358199b0da04f
+  DDQRCode: a4b0284bcea4446b9d6cb64cb0661025304b6951
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  IQKeyboardManager: 69002bb4fea60596b710e57d426abc00e5063630
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MGSwipeTableCell: 616700eb0ffd1c611ba909066cb7fd739790a0a7
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  MXNavigationBarManager: ce9f1a5ae748ec1d117e9ac4e08795192e0216b3
+  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  TBIconTransitionKit: 8fced2cc2e3695de3cad903e261fdb7661f9d080
+  XHLaunchAd: 36a28ceda12b4caaa0040cc60b286cd0429bb95d
+
+PODFILE CHECKSUM: d86355b257727bdc4bfaba7449f8637e17ab271e
+
+COCOAPODS: 1.1.1

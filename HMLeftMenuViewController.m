@@ -24,8 +24,16 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reload) name:@"reload" object:nil];
     // 隐藏分割线
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    // 设置背景图片
-    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"leftBg.jpg"]];
+    // 设置背景图片，将图片设置成填充模式
+    //1.从layer层入手，改变contents
+    self.tableView.layer.contents = (id)[UIImage imageNamed:@"Stars.jpg"].CGImage;
+    //2.重绘图层
+    UIImage *img = [UIImage imageNamed:@"Stars.jpg"];
+    UIGraphicsBeginImageContextWithOptions(self.tableView.frame.size, NO, 0.0f);
+    [img drawInRect:self.tableView.bounds];
+    UIImage *lastImg = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    self.tableView.backgroundColor = [UIColor colorWithPatternImage:lastImg];
     // 创建表格头部视图
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 200)];
     UIImageView *headerImg = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];

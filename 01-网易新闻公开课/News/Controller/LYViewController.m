@@ -98,7 +98,7 @@
     //2.创建控制器
     PYSearchViewController *searchViewController = [PYSearchViewController searchViewControllerWithHotSearches:hotSeaches searchBarPlaceholder:@"搜索频道" didSearchBlock:^(PYSearchViewController *searchViewController, UISearchBar *searchBar, NSString *searchText) {
         //点击搜索后，执行相应操作
-        double delayInSeconds = 0.5;
+        double delayInSeconds = 0.5;//为了使主页动画显示出来，需要延迟执行
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
         dispatch_after(popTime, dispatch_get_main_queue(), ^{
             for (NSInteger i=0; i<hotSeaches.count; i++) {

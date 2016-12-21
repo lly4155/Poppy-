@@ -20,6 +20,7 @@
 
 @interface LYViewController ()<UICollectionViewDelegate, UICollectionViewDataSource,LYChannelViewDelegate,PYSearchViewControllerDelegate>
 @property (nonatomic,strong) NSMutableArray *innerNewsList;//存数据源
+@property (nonatomic,strong) NSArray<NSString*> *hotSeaches;//存频道名字，用于搜索
 @property (weak, nonatomic) IBOutlet LYChannelView *channelView;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) CBStoreHouseRefreshControl *storeHouseRefreshControl;//下拉刷新
@@ -90,11 +91,12 @@
 - (IBAction)moreBtn {
     //建立一个搜索话题的搜索框，点击后直接跳转到相应频道
     //1.设置可搜索的频道内容
-    NSMutableArray *channelID = [[NSMutableArray alloc]init];
+    NSMutableArray *channelID = [NSMutableArray array];
     for (NSInteger i=0; i<self.channel.count; i++) {
         [channelID addObject:self.channel[i].tname];
     }
     NSArray *hotSeaches = [channelID copy];
+    self.hotSeaches = hotSeaches;
     //2.创建控制器
     PYSearchViewController *searchViewController = [PYSearchViewController searchViewControllerWithHotSearches:hotSeaches searchBarPlaceholder:@"搜索频道" didSearchBlock:^(PYSearchViewController *searchViewController, UISearchBar *searchBar, NSString *searchText) {
         //点击搜索后，执行相应操作
@@ -123,13 +125,24 @@
 - (void)searchViewController:(PYSearchViewController *)searchViewController searchTextDidChange:(UISearchBar *)seachBar searchText:(NSString *)searchText
 {
     if (searchText.length) { // 与搜索条件再搜索
-        // 根据条件发送查询（这里模拟搜索）
+        // 根据条件发送查询
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{ // 搜索完毕
             // 显示建议搜索结果
             NSMutableArray *searchSuggestionsM = [NSMutableArray array];
-            for (int i = 0; i < arc4random_uniform(5) + 10; i++) {
-                NSString *searchSuggestion = [NSString stringWithFormat:@"搜索建议 %d", i];
-                [searchSuggestionsM addObject:searchSuggestion];
+            for (int i = 0; i < self.hotSeaches.count; i++) {
+                //一次遍历一个子串, 而不是遍历一个unichar
+                NSRange range;
+                for (int j = 0; j < self.hotSeaches[i].length; j+=range.length) {
+                    range = [self.hotSeaches[i] rangeOfComposedCharacterSequenceAtIndex:j];
+                    if ([searchText containsString: [self.hotSeaches[i] substringWithRange:range]]) {
+                        //保证搜索数组不包含重复的元素
+                        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF == %@", self.hotSeaches[i]];
+                        NSArray *array =[searchSuggestionsM filteredArrayUsingPredicate:predicate];
+                        if(array.count == 0){
+                            [searchSuggestionsM addObject:self.hotSeaches[i]];
+                        }
+                    }
+                }
             }
             // 返回
             searchViewController.searchSuggestions = searchSuggestionsM;

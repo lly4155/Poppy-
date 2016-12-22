@@ -118,7 +118,7 @@
     searchViewController.delegate = self;
     //4.跳转到搜索控制器
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:searchViewController];
-    [self presentViewController:nav  animated:YES completion:nil];
+    [self presentViewController:nav  animated:NO completion:nil];
 }
 
 #pragma mark - PYSearchViewControllerDelegate
@@ -135,7 +135,7 @@
                 for (int j = 0; j < self.hotSeaches[i].length; j+=range.length) {
                     range = [self.hotSeaches[i] rangeOfComposedCharacterSequenceAtIndex:j];
                     if ([searchText containsString: [self.hotSeaches[i] substringWithRange:range]]) {
-                        //保证搜索数组不包含重复的元素
+                        //保证搜索数组不包含重复的元素，使用predicate快速查找
                         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF == %@", self.hotSeaches[i]];
                         NSArray *array =[searchSuggestionsM filteredArrayUsingPredicate:predicate];
                         if(array.count == 0){

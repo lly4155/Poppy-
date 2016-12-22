@@ -16,6 +16,9 @@ PODS:
     - AFNetworking/NSURLSession
   - Bugrpt (1.1.7.2)
   - CBStoreHouseRefreshControl (1.0)
+  - ChameleonFramework (2.1.0):
+    - ChameleonFramework/Default (= 2.1.0)
+  - ChameleonFramework/Default (2.1.0)
   - DDQRCode (1.0.1)
   - DZNEmptyDataSet (1.8.1)
   - IQKeyboardManager (4.0.7)
@@ -35,6 +38,7 @@ DEPENDENCIES:
   - AFNetworking
   - Bugrpt
   - CBStoreHouseRefreshControl
+  - ChameleonFramework
   - DDQRCode
   - DZNEmptyDataSet
   - IQKeyboardManager
@@ -52,6 +56,7 @@ SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Bugrpt: 73f1cf6c820e202650c208e64d4a7f739544285e
   CBStoreHouseRefreshControl: a814bd725e74ff4c1e8dd96eb02358199b0da04f
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   DDQRCode: a4b0284bcea4446b9d6cb64cb0661025304b6951
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   IQKeyboardManager: 69002bb4fea60596b710e57d426abc00e5063630
@@ -65,6 +70,6 @@ SPEC CHECKSUMS:
   TBIconTransitionKit: 8fced2cc2e3695de3cad903e261fdb7661f9d080
   XHLaunchAd: 36a28ceda12b4caaa0040cc60b286cd0429bb95d
 
-PODFILE CHECKSUM: d86355b257727bdc4bfaba7449f8637e17ab271e
+PODFILE CHECKSUM: 8191767033391e2caa8219a5aba4a17cfeab1cd1
 
 COCOAPODS: 1.1.1

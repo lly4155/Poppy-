@@ -1553,7 +1553,7 @@
 					"$(inherited)",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lly.------";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lly------";
 				PRODUCT_NAME = "Poppy网易";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1605,7 +1605,7 @@
 					"$(inherited)",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lly.------";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lly------";
 				PRODUCT_NAME = "Poppy网易";
 				PROVISIONING_PROFILE = "";
 			};

@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ChameleonFramework.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>DDQRCode.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -97,22 +102,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1246B07C0A533EC8EB6E3D8A266C4B4C</key>
+		<key>0E76D6E5F6A27E0D098DB7E8DDDC4CED</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>20E8BFEC20836BCBF8C95EB08F018425</key>
+		<key>14ACB4BECE3AABDDFFE41D9EA292B51B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3BD2AD40B4000DDA8A32F685FC0DD7DF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>43AFBF4F2CD231A7499E3B7813A16837</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>468FBD52AE919BD7463E652D8CEFF9B5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -127,12 +132,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>66D7630105F86A43DD8A4B62740D8D1D</key>
+		<key>6AF5962108EC6C6AFE87B5D754B7B3FB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6AF5962108EC6C6AFE87B5D754B7B3FB</key>
+		<key>74ACB1EC9BD238D85ADCD67AA1B0AF64</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -142,12 +147,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>97E0876B0558841B09F33E00D4656D10</key>
+		<key>9E033EDB5EC0819481B0546434FA577B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9E033EDB5EC0819481B0546434FA577B</key>
+		<key>A1F4F51406D79A3C38528784F6B99246</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -157,12 +162,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>BD5145003BD3083FFA19C73F2E0736DF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>CA3AB1024985C81AEE1E90033BE2A7AF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E26FD92CB1C383E30EC375E6B1CA732B</key>
+		<key>D57F6DD7CBDE11E457971075B0805982</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -13,6 +13,7 @@
 #import "WXApi.h"
 #import "popMenvTopView.h"
 #import "CZAdditions.h"
+#import <ChameleonFramework/Chameleon.h>
 
 @interface ViewController2 ()<HyPopMenuViewDelegate,WXApiDelegate>
 @property (nonatomic, strong)UIImage *creatImg;
@@ -111,8 +112,10 @@
         UIColor *onColor;
         UIColor *offColor;
         do {
-            onColor = [UIColor cz_randomColor];
-            offColor = [UIColor cz_randomColor];
+//            onColor = [UIColor cz_randomColor];
+//            offColor = [UIColor cz_randomColor];
+            onColor = [UIColor colorWithRandomFlatColorExcludingColorsInArray:@[FlatWhite]];
+            offColor = [UIColor colorWithRandomFlatColorExcludingColorsInArray:@[FlatBlack, FlatBlackDark, FlatGray, FlatGrayDark, FlatWhiteDark]];
         } while (onColor==offColor);
         
         

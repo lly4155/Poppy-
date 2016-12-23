@@ -58,11 +58,12 @@
 //生成二维码
 - (void)creat:(id)sender{
     //有值才生成 ?很奇怪，留个坑，返回的是一个空对象
+    [self.view endEditing:YES];
     if (![self.creat.text isEqualToString:@""]) {
         ViewController2 *VC2 = [[ViewController2 alloc]initWithImg:[self encodeQRImageWithContent:self.creat.text size:CGSizeMake(300, 300)] andText:self.creat.text];
         [self.navigationController pushViewController:VC2 animated:YES];
     }else{
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"请输入生成的信息" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"请输入生成的信息" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
         [alert show];
     }
 }
@@ -154,6 +155,7 @@
 
 -(void)viewWillDisappear:(BOOL)animated{
     [self setTabBarHidden:YES];
+    [self.view endEditing:YES];//收起键盘
 }
 
 @end

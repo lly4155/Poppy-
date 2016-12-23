@@ -38,7 +38,7 @@
     [self addRefreshViews];
     [self loadBaseViewsAndData];
     //解决系统边缘右滑失效问题
-    self.navigationController.interactivePopGestureRecognizer.delegate=(id)self;
+//    self.navigationController.interactivePopGestureRecognizer.delegate=(id)self;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -72,7 +72,8 @@
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     //1.返回
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"qrcode_scan_titlebar_back_nor"] style:UIBarButtonItemStylePlain target:self action:@selector(disMiss)];
+    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(NSIntegerMin, NSIntegerMin) forBarMetrics:UIBarMetricsDefault];
+//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"qrcode_scan_titlebar_back_nor"] style:UIBarButtonItemStylePlain target:self action:@selector(disMiss)];
 //    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:nil action:nil];
 //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:nil];
 }

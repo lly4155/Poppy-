@@ -1,5 +1,5 @@
 platform :ios, '8.0'
-project '/Users/mac/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Code/01-网易新闻公开课/Poppy网易.xcodeproj'
+project '/Users/mac/Desktop/Code/01-网易新闻公开课/Poppy网易.xcodeproj'
 target 'Poppy网易' do
 
 pod 'AFNetworking'
@@ -18,5 +18,6 @@ pod "TBIconTransitionKit"
 pod 'pop'
 pod 'IQKeyboardManager'
 pod 'ChameleonFramework'
+pod 'SVProgressHUD'
 
 end

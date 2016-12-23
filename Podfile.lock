@@ -31,6 +31,7 @@ PODS:
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
+  - SVProgressHUD (2.1.2)
   - TBIconTransitionKit (1.0.2)
   - XHLaunchAd (2.1.9)
 
@@ -49,6 +50,7 @@ DEPENDENCIES:
   - MXNavigationBarManager
   - pop
   - SDWebImage
+  - SVProgressHUD
   - TBIconTransitionKit
   - XHLaunchAd
 
@@ -67,9 +69,10 @@ SPEC CHECKSUMS:
   MXNavigationBarManager: ce9f1a5ae748ec1d117e9ac4e08795192e0216b3
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   TBIconTransitionKit: 8fced2cc2e3695de3cad903e261fdb7661f9d080
   XHLaunchAd: 36a28ceda12b4caaa0040cc60b286cd0429bb95d
 
-PODFILE CHECKSUM: 8191767033391e2caa8219a5aba4a17cfeab1cd1
+PODFILE CHECKSUM: 97f32d164fe0ac224417d80d622efe55cca08254
 
 COCOAPODS: 1.1.1

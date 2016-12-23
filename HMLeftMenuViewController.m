@@ -10,6 +10,9 @@
 #import "HMLeftMenuViewController.h"
 #import "HMLeftItem.h"
 #import "HMDrawerViewController.h"
+#import <SDImageCache.h>
+#import <SVProgressHUD.h>
+#define GYLCustomFile [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).lastObject stringByAppendingPathComponent:@"MP3"]
 
 @interface HMLeftMenuViewController()
 @property (nonatomic, strong) NSMutableArray *items;
@@ -21,7 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reload) name:@"reload" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reload:) name:@"reload" object:nil];
     // 隐藏分割线
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     // 设置背景图片，将图片设置成填充模式
@@ -62,6 +65,7 @@
         UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(self.view.frame.size.width - 155, 8, 50, 30)];
         label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         label.textColor = [UIColor whiteColor];
+        label.text = nil;
         _cacheLabel = label;
     }
     return _cacheLabel;
@@ -130,10 +134,11 @@
 
 //清除缓存
 -(void)alertConfirm{
-    [self cleanCaches:NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject];
-    [self cleanCaches:NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).lastObject];
-    [self cleanCaches:NSTemporaryDirectory()];
-    [self reload];
+//    [self cleanCaches:NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject];
+//    [self cleanCaches:NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).lastObject];
+//    [self cleanCaches:NSTemporaryDirectory()];
+    self.cacheLabel.text = @"Cleaning…";
+    [self cleanCaches];
 }
 
 #pragma mark - 清空缓存
@@ -155,30 +160,66 @@
     return 0;
 }
 // 根据路径删除文件
-- (void)cleanCaches:(NSString *)path{
+//- (void)cleanCaches:(NSString *)path{
+-(void)cleanCaches{
     // 利用NSFileManager实现对文件的管理
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    if ([fileManager fileExistsAtPath:path]) {
-        // 获取该路径下面的文件名
-        NSArray *childrenFiles = [fileManager subpathsAtPath:path];
-        for (NSString *fileName in childrenFiles) {
-            // 拼接路径
-            NSString *absolutePath = [path stringByAppendingPathComponent:fileName];
-            // 将文件删除
-            [fileManager removeItemAtPath:absolutePath error:nil];
-        }
-    }
+//    NSFileManager *fileManager = [NSFileManager defaultManager];
+//    if ([fileManager fileExistsAtPath:path]) {
+//        // 获取该路径下面的文件名
+//        NSArray *childrenFiles = [fileManager subpathsAtPath:path];
+//        for (NSString *fileName in childrenFiles) {
+//            // 拼接路径
+//            NSString *absolutePath = [path stringByAppendingPathComponent:fileName];
+//            // 将文件删除
+//            [fileManager removeItemAtPath:absolutePath error:nil];
+//        }
+//    }
+    [SVProgressHUD showWithStatus:@"正在清除缓存···"];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+    
+    [[SDImageCache sharedImageCache] clearDiskOnCompletion:^{
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            
+            [NSThread sleepForTimeInterval:1.0];
+            
+//            NSFileManager *mgr = [NSFileManager defaultManager];
+//            [mgr removeItemAtPath:GYLCustomFile error:nil];
+//            [mgr createDirectoryAtPath:GYLCustomFile withIntermediateDirectories:YES attributes:nil error:nil];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [SVProgressHUD dismiss];
+                
+                // 设置文字
+                self.cacheLabel.text = @"0 KB";
+                
+            });
+            
+        });
+    }];
 }
 
-- (void)reload{
+- (void)reload:(id)sender{
     [self.tableView reloadData];
 }
 
 //计算缓存，返回字符串
 - (NSString *) calculateCache{
-    CGFloat size = [self folderSizeAtPath:NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject] + [self folderSizeAtPath:NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).lastObject] - 0.000259 + [self folderSizeAtPath:NSTemporaryDirectory()];
-    NSString *message = size > 1 ? [NSString stringWithFormat:@"%.2fM", size] : [NSString stringWithFormat:@"%.2fK", size * 1024.0];
-    return message;
+//    CGFloat size = [self folderSizeAtPath:NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject] + [self folderSizeAtPath:NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).lastObject] - 0.000259 + [self folderSizeAtPath:NSTemporaryDirectory()];
+    CGFloat size = [SDImageCache sharedImageCache].getSize;
+//    NSString *message = size > 1 ? [NSString stringWithFormat:@"%.2fM", size] : [NSString stringWithFormat:@"%.2fK", size * 1024.0];
+    NSString *sizeText = nil;
+    if (size >= pow(10, 9)) {
+        sizeText = [NSString stringWithFormat:@"%.2fGB", size / pow(10, 9)];
+    }else if (size >= pow(10, 6)) {
+        sizeText = [NSString stringWithFormat:@"%.2fMB", size / pow(10, 6)];
+    }else if (size >= pow(10, 3)) {
+        sizeText = [NSString stringWithFormat:@"%.2fKB", size / pow(10, 3)];
+    }else {
+//        sizeText = [NSString stringWithFormat:@"%zdB", size];
+        sizeText = @"0 KB";
+    }
+    return sizeText;
 }
 
 

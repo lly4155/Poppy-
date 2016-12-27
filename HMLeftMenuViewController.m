@@ -6,7 +6,6 @@
 //  Copyright © 2016年 pkxing. All rights reserved.
 //
 
-#import "HMNewsTableViewController.h"
 #import "HMLeftMenuViewController.h"
 #import "HMLeftItem.h"
 #import "HMDrawerViewController.h"

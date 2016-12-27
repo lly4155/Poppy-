@@ -60,7 +60,9 @@
         self.Text = titles;
         self.photoSet = url;
         self.urlTag = tag;
-        [self addTimer];
+        if (URLStrs.count>1) {
+            [self addTimer];
+        }else self.collectionView.scrollEnabled = NO;
     }
     return self;
 }
@@ -163,7 +165,7 @@
     [super layoutSubviews];
     //设置frame
     self.collectionView.frame = self.bounds;
-
+    if (self.urlStrs.count>1) {
     //添加pageControl
     UIPageControl *pageCtl = [[UIPageControl alloc]init];
     //设置居右
@@ -180,6 +182,7 @@
     
     [self addSubview:pageCtl];
     self.pageCtl = pageCtl;
+    }
 }
 
 - (void) changePage{

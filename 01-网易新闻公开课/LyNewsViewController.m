@@ -54,26 +54,12 @@
 #pragma mark Observer
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
     if (object == self.webView && [keyPath  isEqual: @"estimatedProgress"]) {
-        //不知道为什么网页会加载2次才结束，埋坑
-        static NSInteger count = 0;
         CGFloat newprogress = [[change objectForKey:NSKeyValueChangeNewKey] doubleValue];
         if (newprogress == 1) {
-            count++;
             [UIView animateWithDuration:0.5 animations:^{
                 self.ProgressView.alpha = 0;
             }completion:^(BOOL finished) {
                 [self.ProgressView setProgress:0 animated:NO];
-                if (count%2 == 0) {
-                MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:self.webView animated:YES];
-                HUD.label.text = @"加载成功!";
-                HUD.contentColor = [UIColor colorWithRed:1 green:99/255.0 blue:71/255.0 alpha:1];
-                HUD.mode = MBProgressHUDModeText;
-                [UIView animateWithDuration:1 animations:^{
-                    HUD.alpha = 0;
-                }completion:^(BOOL finished) {
-                    [HUD setRemoveFromSuperViewOnHide:YES];
-                }];
-                }
             }];
         }else{
             self.ProgressView.alpha = 1;
@@ -122,13 +108,11 @@
 //隐藏tabbar
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-//    [self.tabBarController.tabBar setHidden:YES];
 }
 
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-//    [self.tabBarController.tabBar setHidden:NO];
     //防止没加载完就退出页面，进度条君不会释放问题
     if (self.ProgressView) {
         self.ProgressView.hidden = YES;

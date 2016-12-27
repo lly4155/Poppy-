@@ -747,7 +747,7 @@
         <!--视频-->
         <scene sceneID="xxG-nX-DRU">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VWE-CA-Xyn" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VWE-CA-Xyn" customClass="LYNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" tag="1" title="视频" image="tabbar_icon_media_normal" selectedImage="tabbar_icon_media_highlight" id="C9p-pe-zdB"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jah-ui-MX6">
@@ -766,7 +766,7 @@
         <!--话题-->
         <scene sceneID="pQ0-tg-f74">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RWQ-fx-WHg" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RWQ-fx-WHg" customClass="LYNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" tag="2" title="话题" image="tabbar_icon_found_normal" selectedImage="tabbar_icon_found_highlight" id="oIV-pp-GKQ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bHy-ui-pkd">
@@ -785,7 +785,7 @@
         <!--新闻-->
         <scene sceneID="WJJ-hn-Jwj">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pga-E6-xI1" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pga-E6-xI1" customClass="LYNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="新闻" image="tabbar_icon_news_normal" selectedImage="tabbar_icon_news_highlight" id="wA3-zA-qIf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1vf-n7-MwK">

@@ -7,7 +7,6 @@
 //
 
 #import "HMDrawerViewController.h"
-#import "HMNewsTableViewController.h"
 #import "HyPopMenuView.h"
 //分享功能
 #import "CommonMarco.h"

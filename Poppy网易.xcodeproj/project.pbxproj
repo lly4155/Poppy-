@@ -133,7 +133,6 @@
 		0AC595991D01301D00C4320C /* LoopViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC595921D01301D00C4320C /* LoopViewLayout.m */; };
 		0AC5959B1D01301D00C4320C /* WeakTimerTargetObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC595961D01301D00C4320C /* WeakTimerTargetObj.m */; };
 		0AD7BB2C1DBC5C6200EFD05D /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AD7BB2B1DBC5C6200EFD05D /* logo.png */; };
-		0AE537851DD1BEFA00B65D18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AE537841DD1BEFA00B65D18 /* Main.storyboard */; };
 		0AE5C0931DCADB3F00F75E2B /* LYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE5C0921DCADB3F00F75E2B /* LYViewController.m */; };
 		0AF60F071DBDC968003B5250 /* popMenvTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF60F051DBDC968003B5250 /* popMenvTopView.m */; };
 		0AF60F081DBDC968003B5250 /* popMenvTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AF60F061DBDC968003B5250 /* popMenvTopView.xib */; };
@@ -156,13 +155,15 @@
 		0EA5A1431C9072F6000F57FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EA5A1421C9072F6000F57FE /* Assets.xcassets */; };
 		0EA5A1461C9072F6000F57FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EA5A1441C9072F6000F57FE /* LaunchScreen.storyboard */; };
 		0ED7E0901C90750100417A6F /* HMNetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED7E08F1C90750100417A6F /* HMNetworkTool.m */; };
-		0ED7E0971C90771300417A6F /* HMNewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED7E0961C90771300417A6F /* HMNewsTableViewController.m */; };
 		1F0FFEF51E090FC80042E247 /* PYSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0FFEE91E090FC80042E247 /* PYSearchViewController.m */; };
 		1F0FFEF61E090FC80042E247 /* PYSearch.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1F0FFEEA1E090FC80042E247 /* PYSearch.bundle */; };
 		1F0FFEF71E090FC80042E247 /* PYSearchSuggestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0FFEEC1E090FC80042E247 /* PYSearchSuggestionViewController.m */; };
 		1F0FFEF81E090FC80042E247 /* UIView+PYSearchExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0FFEED1E090FC80042E247 /* UIView+PYSearchExtension.m */; };
 		1F0FFEF91E090FC80042E247 /* UIColor+PYSearchExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0FFEEF1E090FC80042E247 /* UIColor+PYSearchExtension.m */; };
 		1F0FFEFA1E090FC80042E247 /* PYSearchConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0FFEF31E090FC80042E247 /* PYSearchConst.m */; };
+		1F1194241E126E8F0075E2E3 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1194221E126E8F0075E2E3 /* UINavigationController+FDFullscreenPopGesture.m */; };
+		1FAE11411E1242D20003637C /* LYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAE11401E1242D20003637C /* LYNavigationController.m */; };
+		1FAE11431E1248B00003637C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FAE11421E1248B00003637C /* Main.storyboard */; };
 		D703A0DE01F4A4B2479A2C47 /* libPods-Poppy网易.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4253C8841A5C0E7351373A0C /* libPods-Poppy网易.a */; };
 /* End PBXBuildFile section */
 
@@ -411,7 +412,6 @@
 		0AC595961D01301D00C4320C /* WeakTimerTargetObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeakTimerTargetObj.m; sourceTree = "<group>"; };
 		0ACAB00C1DCACFF100DF1035 /* Poppy网易.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Poppy网易.entitlements"; sourceTree = "<group>"; };
 		0AD7BB2B1DBC5C6200EFD05D /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
-		0AE537841DD1BEFA00B65D18 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		0AE5C0911DCADB3F00F75E2B /* LYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYViewController.h; sourceTree = "<group>"; };
 		0AE5C0921DCADB3F00F75E2B /* LYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYViewController.m; sourceTree = "<group>"; };
 		0AF60F041DBDC968003B5250 /* popMenvTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = popMenvTopView.h; sourceTree = "<group>"; };
@@ -448,8 +448,6 @@
 		0EA5A1471C9072F6000F57FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "01-网易新闻公开课/Info.plist"; sourceTree = "<group>"; };
 		0ED7E08E1C90750100417A6F /* HMNetworkTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMNetworkTool.h; sourceTree = "<group>"; };
 		0ED7E08F1C90750100417A6F /* HMNetworkTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMNetworkTool.m; sourceTree = "<group>"; };
-		0ED7E0951C90771300417A6F /* HMNewsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMNewsTableViewController.h; sourceTree = "<group>"; };
-		0ED7E0961C90771300417A6F /* HMNewsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMNewsTableViewController.m; sourceTree = "<group>"; };
 		1F0FFEE91E090FC80042E247 /* PYSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYSearchViewController.m; sourceTree = "<group>"; };
 		1F0FFEEA1E090FC80042E247 /* PYSearch.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PYSearch.bundle; sourceTree = "<group>"; };
 		1F0FFEEB1E090FC80042E247 /* PYSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYSearchViewController.h; sourceTree = "<group>"; };
@@ -462,6 +460,11 @@
 		1F0FFEF21E090FC80042E247 /* UIColor+PYSearchExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+PYSearchExtension.h"; sourceTree = "<group>"; };
 		1F0FFEF31E090FC80042E247 /* PYSearchConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYSearchConst.m; sourceTree = "<group>"; };
 		1F0FFEF41E090FC80042E247 /* PYSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYSearch.h; sourceTree = "<group>"; };
+		1F1194221E126E8F0075E2E3 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
+		1F1194231E126E8F0075E2E3 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
+		1FAE113F1E1242D20003637C /* LYNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYNavigationController.h; sourceTree = "<group>"; };
+		1FAE11401E1242D20003637C /* LYNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYNavigationController.m; sourceTree = "<group>"; };
+		1FAE11421E1248B00003637C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4253C8841A5C0E7351373A0C /* libPods-Poppy网易.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Poppy网易.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5681C1F49CDF50F25034AF57 /* Pods-Poppy网易.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poppy网易.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Poppy网易/Pods-Poppy网易.debug.xcconfig"; sourceTree = "<group>"; };
 		CFE2B46422571190B34215B4 /* Pods-Poppy网易.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poppy网易.release.xcconfig"; path = "Pods/Target Support Files/Pods-Poppy网易/Pods-Poppy网易.release.xcconfig"; sourceTree = "<group>"; };
@@ -685,15 +688,6 @@
 			path = "01-网易新闻公开课";
 			sourceTree = "<group>";
 		};
-		0A4995EF1DF3E583001B75E5 /*  deprecated */ = {
-			isa = PBXGroup;
-			children = (
-				0ED7E0951C90771300417A6F /* HMNewsTableViewController.h */,
-				0ED7E0961C90771300417A6F /* HMNewsTableViewController.m */,
-			);
-			name = " deprecated";
-			sourceTree = "<group>";
-		};
 		0A60CE791D5CD6C3008CDFE7 /* myNews */ = {
 			isa = PBXGroup;
 			children = (
@@ -710,7 +704,7 @@
 				0ED7E08D1C9074E200417A6F /* Tool */,
 				0EA5A1391C9072F6000F57FE /* AppDelegate.h */,
 				0EA5A13A1C9072F6000F57FE /* AppDelegate.m */,
-				0AE537841DD1BEFA00B65D18 /* Main.storyboard */,
+				1FAE11421E1248B00003637C /* Main.storyboard */,
 				0EA5A1421C9072F6000F57FE /* Assets.xcassets */,
 				0EA5A1441C9072F6000F57FE /* LaunchScreen.storyboard */,
 				0EA5A1471C9072F6000F57FE /* Info.plist */,
@@ -1008,6 +1002,8 @@
 				0ED7E08F1C90750100417A6F /* HMNetworkTool.m */,
 				0A6E7AFF1D38A0B300F12765 /* LyActivityIndicator.h */,
 				0A6E7B001D38A0B300F12765 /* LyActivityIndicator.m */,
+				1F1194221E126E8F0075E2E3 /* UINavigationController+FDFullscreenPopGesture.m */,
+				1F1194231E126E8F0075E2E3 /* UINavigationController+FDFullscreenPopGesture.h */,
 			);
 			name = Tool;
 			path = "01-网易新闻公开课/Tool";
@@ -1029,9 +1025,10 @@
 			isa = PBXGroup;
 			children = (
 				1F0FFEE81E090FB70042E247 /* PYSearch */,
-				0A4995EF1DF3E583001B75E5 /*  deprecated */,
 				0A01F6611DB315880062FAFC /* SQTabbarControllerAnimatedTransitioning.h */,
 				0A01F6621DB315880062FAFC /* SQTabbarControllerAnimatedTransitioning.m */,
+				1FAE113F1E1242D20003637C /* LYNavigationController.h */,
+				1FAE11401E1242D20003637C /* LYNavigationController.m */,
 				0A5E1A7A1D31F05D00B2B7E7 /* LYTabBarCtl.h */,
 				0A5E1A7B1D31F05D00B2B7E7 /* LYTabBarCtl.m */,
 				0A4B25661D805C1C007D3367 /* AKTA.plist */,
@@ -1206,12 +1203,12 @@
 				0A3B557D1DBA7136008B6AF5 /* icon_share_wechat@2x.png in Resources */,
 				0A4B25691D805C1C007D3367 /* storehouse.plist in Resources */,
 				0ABBCC5D1DEDA1DC006CB571 /* chatfrom_doctor_icon.png in Resources */,
-				0AE537851DD1BEFA00B65D18 /* Main.storyboard in Resources */,
 				0AF60F081DBDC968003B5250 /* popMenvTopView.xib in Resources */,
 				0ABBCC5F1DEDA1DC006CB571 /* 0.jpeg in Resources */,
 				0ABBCC5A1DEDA1DC006CB571 /* Chat_take_picture.png in Resources */,
 				0A4B25681D805C1C007D3367 /* AKTA.plist in Resources */,
 				0A392DB61DA1F0C20066E6D7 /* Info.plist in Resources */,
+				1FAE11431E1248B00003637C /* Main.storyboard in Resources */,
 				0ABBCC561DEDA1DC006CB571 /* chat_ipunt_message.png in Resources */,
 				0A3B557C1DBA7136008B6AF5 /* icon_share_webo@2x.png in Resources */,
 				0A634AD71DCC6A4F00398097 /* topic_news.json in Resources */,
@@ -1314,11 +1311,13 @@
 				0A5E1A7C1D31F05D00B2B7E7 /* LYTabBarCtl.m in Sources */,
 				0E7A333C1C910DA800EBC8BC /* HMNews.m in Sources */,
 				0A634ACA1DCC360600398097 /* NSArray+Log.m in Sources */,
+				1FAE11411E1242D20003637C /* LYNavigationController.m in Sources */,
 				0A392DBA1DA1F0C20066E6D7 /* MASLayoutConstraint.m in Sources */,
 				0A634ACC1DCC360600398097 /* NSObject+CZRuntime.m in Sources */,
 				0A392DB71DA1F0C20066E6D7 /* MASCompositeConstraint.m in Sources */,
 				0A392DBC1DA1F0C20066E6D7 /* MASViewConstraint.m in Sources */,
 				0A392DB51DA1F0C20066E6D7 /* split.c in Sources */,
+				1F1194241E126E8F0075E2E3 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				0A392DC31DA1FC5D0066E6D7 /* ViewController2.m in Sources */,
 				0ABBCC2A1DEDA19C006CB571 /* UUImageAvatarBrowser.m in Sources */,
 				0ED7E0901C90750100417A6F /* HMNetworkTool.m in Sources */,
@@ -1370,7 +1369,6 @@
 				0EA5A1381C9072F6000F57FE /* main.m in Sources */,
 				0A392D801DA1F0BA0066E6D7 /* Scan_VC.m in Sources */,
 				0E7A33431C9112F700EBC8BC /* HMNewsCell.m in Sources */,
-				0ED7E0971C90771300417A6F /* HMNewsTableViewController.m in Sources */,
 				0ABBCC2B1DEDA19C006CB571 /* UUInputFunctionView.m in Sources */,
 				0ABBCC2D1DEDA19C006CB571 /* UUMessageCell.m in Sources */,
 				0ABBCC2F1DEDA19C006CB571 /* UUMessageFrame.m in Sources */,

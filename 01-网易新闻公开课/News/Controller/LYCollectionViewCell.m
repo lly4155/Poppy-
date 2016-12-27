@@ -18,7 +18,6 @@
 #import "LyActivityIndicator.h"
 #import "UIScrollView+EmptyDataSet.h"
 #import "LyWalletViewController.h"
-#import "HMNewsTableViewController.h"
 #define LQXWidth self.view.bounds.size.width
 #define LQXHeight self.view.bounds.size.height
 

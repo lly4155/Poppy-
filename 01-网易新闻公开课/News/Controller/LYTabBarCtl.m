@@ -7,13 +7,12 @@
 //
 
 #import "LYTabBarCtl.h"
-#import "HMNewsTableViewController.h"
 #import "SQTabbarControllerAnimatedTransitioning.h"
 
 NSInteger _preIndex = 0;
 NSInteger _selectedIndex = 0;
 
-@interface LYTabBarCtl ()<UITabBarControllerDelegate>
+@interface LYTabBarCtl ()<UITabBarDelegate, UINavigationControllerDelegate>
 @property (nonatomic, assign) BOOL flag;//调节上一次的tabbar选择是哪个
 @end
 

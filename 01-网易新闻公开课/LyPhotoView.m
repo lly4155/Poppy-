@@ -61,17 +61,17 @@
     //将图片url传递给cell
     cell.urlS = self.urlStrs[indexPath.item];
     //给collectionView添加左滑菜单
-    UIScreenEdgePanGestureRecognizer *ges = [[UIScreenEdgePanGestureRecognizer alloc]initWithTarget:self action:@selector(edgePanGestureRecognizer:)];
-    ges.edges = UIRectEdgeLeft;
-    [cell addGestureRecognizer:ges];
-    [self.collectionView.panGestureRecognizer requireGestureRecognizerToFail:ges];
+//    UIScreenEdgePanGestureRecognizer *ges = [[UIScreenEdgePanGestureRecognizer alloc]initWithTarget:self action:@selector(edgePanGes:)];
+//    ges.edges = UIRectEdgeLeft;
+//    [cell addGestureRecognizer:ges];
+//    [self.collectionView.panGestureRecognizer requireGestureRecognizerToFail:ges];
     return cell;
 }
 
 /**
  *  手势识别回调方法
  */
-- (void)edgePanGestureRecognizer:(UIScreenEdgePanGestureRecognizer *)pan {
+- (void)edgePanGes:(UIScreenEdgePanGestureRecognizer *)pan {
     // 获得x方向拖动的距离
     CGFloat offsetX = [pan translationInView:pan.view].x;
     // 限制offsetX的最大值为leftWidth

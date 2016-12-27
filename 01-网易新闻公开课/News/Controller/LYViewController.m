@@ -274,11 +274,11 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    [self setTabBarHidden:NO];
+//    [self setTabBarHidden:NO];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
-    [self setTabBarHidden:YES];
+//    [self setTabBarHidden:YES];
 }
 
 @end

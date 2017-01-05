@@ -18,7 +18,7 @@
 #import "LyMeVC.h"//其实是聊天视图，没改名
 #import "PYSearch.h"//搜索框
 
-@interface LYViewController ()<UICollectionViewDelegate, UICollectionViewDataSource,LYChannelViewDelegate,PYSearchViewControllerDelegate>
+@interface LYViewController ()<UICollectionViewDelegate, UICollectionViewDataSource,LYChannelViewDelegate,PYSearchViewControllerDelegate,UINavigationControllerDelegate>
 @property (nonatomic,strong) NSMutableArray *innerNewsList;//存数据源
 @property (nonatomic,strong) NSArray<NSString*> *hotSeaches;//存频道名字，用于搜索
 @property (weak, nonatomic) IBOutlet LYChannelView *channelView;
@@ -45,7 +45,7 @@
     UIBarButtonItem *returnBtn = [[UIBarButtonItem alloc]init];
     returnBtn.title = @"返回";
     self.navigationItem.backBarButtonItem = returnBtn;
-    
+    self.navigationController.delegate = self;
     // 给频道视图设置数据
     self.channelView.channels = self.channel;
     self.channelView.delegate = self;
@@ -119,6 +119,14 @@
     //4.跳转到搜索控制器
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:searchViewController];
     [self presentViewController:nav  animated:NO completion:nil];
+}
+
+#pragma mark - navDelegate,如果需要隐藏导航条的控制器较多，通过代理实现
+// 将要显示控制器
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    // 判断要显示的控制器是否是自己
+    BOOL isHiddenNavBar = [viewController isKindOfClass:[LyPhotoViewController class]];
+    [self.navigationController setNavigationBarHidden:isHiddenNavBar animated:YES];
 }
 
 #pragma mark - PYSearchViewControllerDelegate

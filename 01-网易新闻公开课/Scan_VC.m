@@ -10,6 +10,7 @@
 #import "UIView+SDExtension.h"
 #import "ViewController2.h"
 #import <TBIconTransitionKit/TBAnimationButton.h>
+#import "UIButton+Image.h"
 
 static const CGFloat kBorderW = 165;
 static const CGFloat kMargin = 80;
@@ -21,8 +22,8 @@ static const CGFloat kMargin = 80;
 @property (nonatomic, strong) UIView *scanWindow;
 @property (nonatomic, strong) UIImageView *scanNetImageView;
 @property (nonatomic, weak) LyTopicVC *super;
-@property (nonatomic, strong)UIBarButtonItem *flashBtn;
-@property (nonatomic, strong)UIBarButtonItem *albumBtn;
+@property (nonatomic, weak)UIButton *flashBtn;
+@property (nonatomic, weak)UIButton *albumBtn;
 @property (nonatomic, assign)BOOL open;
 @property (weak, nonatomic) TBAnimationButton *button;
 @property (nonatomic, strong) NSMutableArray *ItemsBtn;
@@ -38,20 +39,23 @@ static const CGFloat kMargin = 80;
 }
 
 //隐藏导航条
+- (void)viewDidAppear:(BOOL)animated{
+    [self.navigationController setNavigationBarHidden:YES];
+}
+
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     //变透明
-    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
-//    [self.tabBarController.tabBar setHidden:YES];
+//    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+//    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [self resumeAnimation];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setShadowImage:nil];
+//    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+//    [self.navigationController.navigationBar setShadowImage:nil];
 //    [self.tabBarController.tabBar setHidden:NO];
 }
 
@@ -98,27 +102,34 @@ static const CGFloat kMargin = 80;
 -(void)setupNavView{
     
     //1.返回
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"qrcode_scan_titlebar_back_nor"] style:UIBarButtonItemStylePlain target:self action:@selector(disMiss)];
+//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"qrcode_scan_titlebar_back_nor"] style:UIBarButtonItemStylePlain target:self action:@selector(disMiss)];
+    UIButton *backBtn = [[UIButton alloc]initWithFrame:CGRectMake(20, 38, 40, 40)];
+    [backBtn setBackgroundImageByName:@"qrcode_scan_titlebar_back_nor"];
+    [backBtn addTarget:self action:@selector(disMiss) forControlEvents:UIControlEventTouchDown];
+    [self.view addSubview:backBtn];
     
     //2.相册
-    UIBarButtonItem *album = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"qrcode_scan_btn_photo_down"] style:UIBarButtonItemStylePlain target:self action:@selector(myAlbum)];
+    UIButton *album = [[UIButton alloc]initWithFrame:CGRectMake(70, 30, 40, 40)];
+    album.alpha = 0;
+    [album setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"qrcode_scan_btn_photo_down"]]];
+    [album addTarget:self action:@selector(myAlbum) forControlEvents:UIControlEventTouchDown];
+    [self.view addSubview:album];
     self.albumBtn = album;
     
     //3.闪光灯
-    UIBarButtonItem *flash = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"qrcode_scan_btn_flash_down"] style:UIBarButtonItemStylePlain target:self action:@selector(openFlash:)];
+    UIButton *flash = [[UIButton alloc]initWithFrame:CGRectMake(70, 30, 40, 40)];
+    flash.alpha = 0;
+    [flash setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"qrcode_scan_btn_flash_down"]]];
+    [flash addTarget:self action:@selector(openFlash:) forControlEvents:UIControlEventTouchDown];
+    [self.view addSubview:flash];
     self.flashBtn = flash;
     
     //4.展开按钮
-    TBAnimationButton *menuBtn = [[TBAnimationButton alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
+    TBAnimationButton *menuBtn = [[TBAnimationButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width - 80, 33, 35, 35)];
     menuBtn.currentState = TBAnimationButtonStateMenu;
-    self.button = menuBtn;
     [menuBtn addTarget:self action:@selector(onButton:) forControlEvents:UIControlEventTouchDown];
-    UIBarButtonItem *menu = [[UIBarButtonItem alloc]initWithCustomView:menuBtn];
-    
-    //添加到rightBarButtonItems
-    NSMutableArray *array = [[NSMutableArray alloc]initWithObjects:menu,nil];
-    self.ItemsBtn = array;
-    self.navigationItem.rightBarButtonItems = array;
+    [self.view addSubview:menuBtn];
+    self.button = menuBtn;
 }
     
 //按钮展开动画功能
@@ -131,15 +142,22 @@ static const CGFloat kMargin = 80;
         });
         
         [UIView animateWithDuration:0.5 animations:^{
-            self.navigationItem.rightBarButtonItems = self.ItemsBtn;
+            self.albumBtn.frame = CGRectMake(self.view.frame.size.width - 140, 30, 40, 40);
+            self.flashBtn.frame = CGRectMake(self.view.frame.size.width - 200, 30, 40, 40);
+            self.albumBtn.alpha = 1;
+            self.flashBtn.alpha = 1;
         }];
     } else if (sender.currentState == TBAnimationButtonStateArrow) {
         [self.ItemsBtn removeObjectsInArray:@[_albumBtn,_flashBtn]];
         dispatch_async(dispatch_get_main_queue(), ^{
         [sender animationTransformToState:TBAnimationButtonStateMenu];
         });
-        //这里没找到相关rightBarButtonItems移除元素的动画。。
-        self.navigationItem.rightBarButtonItems = self.ItemsBtn;
+        [UIView animateWithDuration:0.5 animations:^{
+            self.albumBtn.frame = CGRectMake(70, 30, 40, 40);
+            self.flashBtn.frame = CGRectMake(70, 30, 40, 40);
+            self.albumBtn.alpha = 0;
+            self.flashBtn.alpha = 0;
+        }];
     }
 }
     

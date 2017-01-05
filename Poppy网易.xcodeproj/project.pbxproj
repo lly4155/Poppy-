@@ -162,8 +162,11 @@
 		1F0FFEF91E090FC80042E247 /* UIColor+PYSearchExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0FFEEF1E090FC80042E247 /* UIColor+PYSearchExtension.m */; };
 		1F0FFEFA1E090FC80042E247 /* PYSearchConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0FFEF31E090FC80042E247 /* PYSearchConst.m */; };
 		1F1194241E126E8F0075E2E3 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1194221E126E8F0075E2E3 /* UINavigationController+FDFullscreenPopGesture.m */; };
+		1F2E95D41E1E44D8007C0AA0 /* UIButton+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2E95D31E1E44D8007C0AA0 /* UIButton+Image.m */; };
+		1F3C1D341E1E1F7E00A7B6BD /* KMNavigationBarTransition in Resources */ = {isa = PBXBuildFile; fileRef = 1F3C1D331E1E1F7E00A7B6BD /* KMNavigationBarTransition */; };
 		1FAE11411E1242D20003637C /* LYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAE11401E1242D20003637C /* LYNavigationController.m */; };
 		1FAE11431E1248B00003637C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FAE11421E1248B00003637C /* Main.storyboard */; };
+		1FBE62771E136AE500D1F382 /* UINavigationBar+backGroundColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE62761E136AE500D1F382 /* UINavigationBar+backGroundColor.m */; };
 		D703A0DE01F4A4B2479A2C47 /* libPods-Poppy网易.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4253C8841A5C0E7351373A0C /* libPods-Poppy网易.a */; };
 /* End PBXBuildFile section */
 
@@ -462,9 +465,14 @@
 		1F0FFEF41E090FC80042E247 /* PYSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYSearch.h; sourceTree = "<group>"; };
 		1F1194221E126E8F0075E2E3 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		1F1194231E126E8F0075E2E3 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
+		1F2E95D21E1E44D8007C0AA0 /* UIButton+Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Image.h"; sourceTree = "<group>"; };
+		1F2E95D31E1E44D8007C0AA0 /* UIButton+Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Image.m"; sourceTree = "<group>"; };
+		1F3C1D331E1E1F7E00A7B6BD /* KMNavigationBarTransition */ = {isa = PBXFileReference; lastKnownFileType = folder; path = KMNavigationBarTransition; sourceTree = "<group>"; };
 		1FAE113F1E1242D20003637C /* LYNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYNavigationController.h; sourceTree = "<group>"; };
 		1FAE11401E1242D20003637C /* LYNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYNavigationController.m; sourceTree = "<group>"; };
 		1FAE11421E1248B00003637C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		1FBE62751E136AE500D1F382 /* UINavigationBar+backGroundColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+backGroundColor.h"; sourceTree = "<group>"; };
+		1FBE62761E136AE500D1F382 /* UINavigationBar+backGroundColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+backGroundColor.m"; sourceTree = "<group>"; };
 		4253C8841A5C0E7351373A0C /* libPods-Poppy网易.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Poppy网易.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5681C1F49CDF50F25034AF57 /* Pods-Poppy网易.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poppy网易.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Poppy网易/Pods-Poppy网易.debug.xcconfig"; sourceTree = "<group>"; };
 		CFE2B46422571190B34215B4 /* Pods-Poppy网易.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poppy网易.release.xcconfig"; path = "Pods/Target Support Files/Pods-Poppy网易/Pods-Poppy网易.release.xcconfig"; sourceTree = "<group>"; };
@@ -994,6 +1002,7 @@
 		0ED7E08D1C9074E200417A6F /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				1F3C1D331E1E1F7E00A7B6BD /* KMNavigationBarTransition */,
 				0A634AD81DCC6AD900398097 /* YYModel */,
 				0A634AB01DCC360600398097 /* Additions */,
 				0AFB52461D2E091400B1A31F /* SXNetworkTools.h */,
@@ -1002,8 +1011,10 @@
 				0ED7E08F1C90750100417A6F /* HMNetworkTool.m */,
 				0A6E7AFF1D38A0B300F12765 /* LyActivityIndicator.h */,
 				0A6E7B001D38A0B300F12765 /* LyActivityIndicator.m */,
-				1F1194221E126E8F0075E2E3 /* UINavigationController+FDFullscreenPopGesture.m */,
 				1F1194231E126E8F0075E2E3 /* UINavigationController+FDFullscreenPopGesture.h */,
+				1F1194221E126E8F0075E2E3 /* UINavigationController+FDFullscreenPopGesture.m */,
+				1F2E95D21E1E44D8007C0AA0 /* UIButton+Image.h */,
+				1F2E95D31E1E44D8007C0AA0 /* UIButton+Image.m */,
 			);
 			name = Tool;
 			path = "01-网易新闻公开课/Tool";
@@ -1029,6 +1040,8 @@
 				0A01F6621DB315880062FAFC /* SQTabbarControllerAnimatedTransitioning.m */,
 				1FAE113F1E1242D20003637C /* LYNavigationController.h */,
 				1FAE11401E1242D20003637C /* LYNavigationController.m */,
+				1FBE62751E136AE500D1F382 /* UINavigationBar+backGroundColor.h */,
+				1FBE62761E136AE500D1F382 /* UINavigationBar+backGroundColor.m */,
 				0A5E1A7A1D31F05D00B2B7E7 /* LYTabBarCtl.h */,
 				0A5E1A7B1D31F05D00B2B7E7 /* LYTabBarCtl.m */,
 				0A4B25661D805C1C007D3367 /* AKTA.plist */,
@@ -1210,6 +1223,7 @@
 				0A392DB61DA1F0C20066E6D7 /* Info.plist in Resources */,
 				1FAE11431E1248B00003637C /* Main.storyboard in Resources */,
 				0ABBCC561DEDA1DC006CB571 /* chat_ipunt_message.png in Resources */,
+				1F3C1D341E1E1F7E00A7B6BD /* KMNavigationBarTransition in Resources */,
 				0A3B557C1DBA7136008B6AF5 /* icon_share_webo@2x.png in Resources */,
 				0A634AD71DCC6A4F00398097 /* topic_news.json in Resources */,
 				0ABBCC5C1DEDA1DC006CB571 /* chatfrom_bg_normal.png in Resources */,
@@ -1317,6 +1331,7 @@
 				0A392DB71DA1F0C20066E6D7 /* MASCompositeConstraint.m in Sources */,
 				0A392DBC1DA1F0C20066E6D7 /* MASViewConstraint.m in Sources */,
 				0A392DB51DA1F0C20066E6D7 /* split.c in Sources */,
+				1FBE62771E136AE500D1F382 /* UINavigationBar+backGroundColor.m in Sources */,
 				1F1194241E126E8F0075E2E3 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				0A392DC31DA1FC5D0066E6D7 /* ViewController2.m in Sources */,
 				0ABBCC2A1DEDA19C006CB571 /* UUImageAvatarBrowser.m in Sources */,
@@ -1349,6 +1364,7 @@
 				0EA5A13B1C9072F6000F57FE /* AppDelegate.m in Sources */,
 				1F0FFEF51E090FC80042E247 /* PYSearchViewController.m in Sources */,
 				0ABBCC4F1DEDA1DC006CB571 /* NSDate+Utils.m in Sources */,
+				1F2E95D41E1E44D8007C0AA0 /* UIButton+Image.m in Sources */,
 				0AFB52451D2E08F700B1A31F /* SXAdManager.m in Sources */,
 				0A634ADE1DCC6AD900398097 /* NSObject+YYModel.m in Sources */,
 				0A3B55801DBA7136008B6AF5 /* XMShareUtil.m in Sources */,

@@ -20,8 +20,6 @@
 @property (nonatomic, strong) NSMutableArray *senderAPI;//接收photoID
 @property (nonatomic, strong) NSMutableArray *desc;
 @property (nonatomic , strong) LyPhotoView *PhotoView;
-@property (nonatomic , weak) UIButton *back;
-@property (nonatomic , weak) UIButton *replyBtn;
 @property (nonatomic , copy) NSString *commenturl;
 @property( nonatomic , assign) NSInteger page;
 @property (nonatomic , readonly) CGRect originFrame;
@@ -45,7 +43,6 @@
     [super viewDidLoad];
     //监听下一张图片滚动结束事件
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(nextPhoto) name:@"nextConent" object:nil];
-    
     self.view.backgroundColor = [UIColor blackColor];
     if (self.flag != YES ) {
         [self loadDate];
@@ -92,8 +89,10 @@
         
         
         //加载back按钮
-//        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"weather_back"] style:UIBarButtonItemStylePlain target:self action:@selector(turnBack:)];
-        [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(NSIntegerMin, NSIntegerMin) forBarMetrics:UIBarMetricsDefault];
+        UIButton *backBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 20, 40, 40)];
+        backBtn.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"weather_back"]];
+        [backBtn addTarget:self action:@selector(turnBack:) forControlEvents:UIControlEventTouchDown];
+        [self.view addSubview:backBtn];
         
         //加载评论按钮
         NSInteger anInteger = [_senderAPI[1] integerValue];
@@ -114,13 +113,10 @@
         reply.titleLabel.font = [UIFont systemFontOfSize:13.0];
         reply.titleLabel.textAlignment = NSTextAlignmentCenter;
         float width = reply.frame.size.width;
-        reply.frame = CGRectMake(0, 0, width + 13, 40);
+        reply.frame = CGRectMake(self.view.frame.size.width - width - 25, 30, width + 13, 40);
         [reply addTarget:self action:@selector(reply) forControlEvents:UIControlEventTouchUpInside];
         [reply setBackgroundImage:[UIImage imageNamed:@"contentview_commentbacky"] forState:UIControlStateNormal];
         [self.view addSubview:reply];
-        self.replyBtn = reply;
-        UIBarButtonItem  *rightItem =[[UIBarButtonItem alloc]initWithCustomView: reply];
-        self.navigationItem.rightBarButtonItem = rightItem;
         
         //初始化加载内容
         UILabel *content = [[UILabel alloc]initWithFrame:CGRectMake(20, 40 , self.view.frame.size.width - 30, 22)];
@@ -158,7 +154,7 @@
         self.contentV = contentV;
         [self nextPhoto];
     }else{
-        UIAlertView * alertView = [[UIAlertView alloc]initWithTitle:@"网络不给力呀" message:@"数据加载失败" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        UIAlertView * alertView = [[UIAlertView alloc]initWithTitle:@"网络出错" message:@"数据加载失败" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alertView show];
     }
 }
@@ -214,20 +210,10 @@
 }
 
 //隐藏导航条
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    self.navigationController.navigationBar.barTintColor = [UIColor clearColor];
-    //变透明，但是前面的视图导航器也会变透明，不友好
-//    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
-//    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
+- (void)viewDidAppear:(BOOL)animated{
+    [self.navigationController setNavigationBarHidden:YES];
 }
 
--(void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:213/255.0 green:24/255.0 blue:37/255.0 alpha:0.8];
-//    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
-//    [self.navigationController.navigationBar setShadowImage:nil];
-}
 
 //获得屏幕图像
 - (UIImage *)imageFromView: (UIView *) theView

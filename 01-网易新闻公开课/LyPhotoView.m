@@ -50,6 +50,7 @@
     [[NSNotificationCenter defaultCenter]postNotificationName:@"nextConent" object:nil];
 }
 
+
 //数据源方法
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.urlStrs.count;

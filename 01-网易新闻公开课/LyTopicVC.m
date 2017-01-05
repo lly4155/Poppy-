@@ -14,7 +14,7 @@
 #import "ViewController2.h"
 #import "CZAdditions.h"
 
-@interface LyTopicVC ()<AVCaptureMetadataOutputObjectsDelegate>
+@interface LyTopicVC ()<AVCaptureMetadataOutputObjectsDelegate,UINavigationControllerDelegate>
 @property (nonatomic, strong) AVCaptureSession *session;
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *preLayer;
 @property (nonatomic) AVCaptureSession *captureSession;
@@ -27,7 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.navigationController.delegate = self;
     // Do any additional setup after loading the view.
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:213/255.0 green:24/255.0 blue:37/255.0 alpha:0.8];
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName:[UIFont boldSystemFontOfSize:20]};
@@ -66,6 +66,13 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"请输入生成的信息" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
         [alert show];
     }
+}
+#pragma mark - navDelegate,如果需要隐藏导航条的控制器较多，通过代理实现
+// 将要显示控制器
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    // 判断要显示的控制器是否是自己
+    BOOL isHiddenNavBar = [viewController isKindOfClass:[Scan_VC class]];
+    [self.navigationController setNavigationBarHidden:isHiddenNavBar animated:YES];
 }
 
 - (UIImage *)encodeQRImageWithContent:(NSString *)content size:(CGSize)size {

@@ -7,6 +7,7 @@
 //
 
 #import "LYNavigationController.h"
+#import <objc/runtime.h>
 
 @interface LYNavigationController ()<UINavigationControllerDelegate>
 @property (nonatomic, weak) id popDelegate;
@@ -17,18 +18,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.popDelegate = self.interactivePopGestureRecognizer.delegate;
-//    self.delegate = self;
+    self.popDelegate = self.interactivePopGestureRecognizer.delegate;
+    self.delegate = self;
 }
 
-//- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
-//{
-//    if (viewController == self.viewControllers[0]) {
-//        self.interactivePopGestureRecognizer.delegate = self.popDelegate;
-//    }else{
-//        self.interactivePopGestureRecognizer.delegate = nil;
-//    }
-//}
+- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    if (viewController == self.viewControllers[0]) {
+        self.interactivePopGestureRecognizer.delegate = self.popDelegate;
+    }else{
+        self.interactivePopGestureRecognizer.delegate = nil;
+    }
+}
 
 //解决push时隐藏Tabbar
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated

@@ -8,7 +8,7 @@
 
 #import "HMLeftMenuViewController.h"
 #import "HMLeftItem.h"
-#import "HMDrawerViewController.h"
+#import "LYDrawerViewController.h"
 #import <SDImageCache.h>
 #import <SVProgressHUD.h>
 #define GYLCustomFile [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).lastObject stringByAppendingPathComponent:@"MP3"]
@@ -21,21 +21,18 @@
 
 @implementation HMLeftMenuViewController
 
+- (void)viewWillAppear:(BOOL)animated{
+    [self reload:self];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reload:) name:@"reload" object:nil];
     // 隐藏分割线
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    // 设置背景图片，将图片设置成填充模式
-    //1.从layer层入手，改变contents
-    self.tableView.layer.contents = (id)[UIImage imageNamed:@"Stars.jpg"].CGImage;
-    //2.重绘图层
-    UIImage *img = [UIImage imageNamed:@"Stars.jpg"];
-    UIGraphicsBeginImageContextWithOptions(self.tableView.frame.size, NO, 0.0f);
-    [img drawInRect:self.tableView.bounds];
-    UIImage *lastImg = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    self.tableView.backgroundColor = [UIColor colorWithPatternImage:lastImg];
+    self.tableView.showsHorizontalScrollIndicator = NO;
+    self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.backgroundColor = [UIColor clearColor];
     // 创建表格头部视图
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 200)];
     UIImageView *headerImg = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
@@ -122,11 +119,11 @@
         [self showDetailViewController:alert sender:nil];
     }else if([item.title isEqual:@"Poppy钱包"]){
         //回到主控制器的方法有问题，所以使用关闭效果
-        [[HMDrawerViewController sharedDrawer] closeLeftMenuWithDuration:0.25];
+        [[LYDrawerViewController sharedDrawer] closecloseLeftMenuWithDuration:0.25];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"pushWallet" object:self userInfo:nil];
     }else if ([item.title isEqual:@"我的消息"]){
         //回到主控制器的方法有问题，所以使用关闭效果
-        [[HMDrawerViewController sharedDrawer] closeLeftMenuWithDuration:0.25];
+        [[LYDrawerViewController sharedDrawer] closecloseLeftMenuWithDuration:0.25];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"pushChatView" object:self userInfo:nil];
     }
 }

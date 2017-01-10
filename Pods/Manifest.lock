@@ -26,6 +26,7 @@ PODS:
   - MGSwipeTableCell (1.5.6)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
+  - MSDynamicsDrawerViewController (1.5.1)
   - MXNavigationBarManager (1.1)
   - pop (1.0.9)
   - SDWebImage (3.8.2):
@@ -47,6 +48,7 @@ DEPENDENCIES:
   - MGSwipeTableCell
   - MJExtension
   - MJRefresh
+  - MSDynamicsDrawerViewController
   - MXNavigationBarManager
   - pop
   - SDWebImage
@@ -66,6 +68,7 @@ SPEC CHECKSUMS:
   MGSwipeTableCell: 616700eb0ffd1c611ba909066cb7fd739790a0a7
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  MSDynamicsDrawerViewController: 2874df90f5e9453dc7d4e32f8038b50615d4baa7
   MXNavigationBarManager: ce9f1a5ae748ec1d117e9ac4e08795192e0216b3
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
@@ -73,6 +76,6 @@ SPEC CHECKSUMS:
   TBIconTransitionKit: 8fced2cc2e3695de3cad903e261fdb7661f9d080
   XHLaunchAd: 36a28ceda12b4caaa0040cc60b286cd0429bb95d
 
-PODFILE CHECKSUM: 97f32d164fe0ac224417d80d622efe55cca08254
+PODFILE CHECKSUM: bf961dfbd16d1d78a3dd10dc805dedb4db51cfaf
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0.beta.3

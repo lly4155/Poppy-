@@ -1,5 +1,5 @@
 platform :ios, '8.0'
-project '/Users/mac/Desktop/Code/01-网易新闻公开课/Poppy网易.xcodeproj'
+project '/Users/lly/Desktop/Code/01-网易新闻公开课/Poppy网易.xcodeproj'
 target 'Poppy网易' do
 
 pod 'AFNetworking'
@@ -19,5 +19,6 @@ pod 'pop'
 pod 'IQKeyboardManager'
 pod 'ChameleonFramework'
 pod 'SVProgressHUD'
+pod 'MSDynamicsDrawerViewController'
 
 end

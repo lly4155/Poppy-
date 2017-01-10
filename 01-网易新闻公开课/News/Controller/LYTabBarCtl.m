@@ -8,7 +8,6 @@
 
 #import "LYTabBarCtl.h"
 #import "SQTabbarControllerAnimatedTransitioning.h"
-
 NSInteger _preIndex = 0;
 NSInteger _selectedIndex = 0;
 
@@ -35,6 +34,7 @@ NSInteger _selectedIndex = 0;
     [self.view addGestureRecognizer:doubleClik];
     
     self.selectedIndex = 0;
+
 }
 
 //重写tabBar的代理方法

@@ -20,12 +20,13 @@
 #import "CommonMarco.h" //宏定义
 #import "ViewController2.h"
 #import <IQKeyboardManager.h>
+#import "LYDrawerViewController.h"
 
 @interface AppDelegate ()<WeiboSDKDelegate, QQApiInterfaceDelegate>
 //广告URL和跳转URL
 @property (nonatomic, copy) NSString *imgUrl;
 @property (nonatomic, copy) NSString *action_params;
-
+@property (nonatomic, strong) UIImageView *windowBackground;
 @end
 
 @implementation AppDelegate
@@ -42,7 +43,26 @@
     
     [self example];
     [self.window makeKeyAndVisible];
+    [self.window addSubview:self.windowBackground];
+    [self.window sendSubviewToBack:self.windowBackground];
     return YES;
+}
+
+- (UIImageView *)windowBackground
+{
+    if (!_windowBackground) {
+        //1.从layer层入手，改变contents
+        _windowBackground.layer.contents = (id)[UIImage imageNamed:@"Stars.jpg"].CGImage;
+        //2.重绘图层
+        UIImage *img = [UIImage imageNamed:@"Stars.jpg"];
+        UIGraphicsBeginImageContextWithOptions(self.window.frame.size, NO, 0.0f);
+        [img drawInRect:self.window.bounds];
+        UIImage *lastImg = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        _windowBackground = [[UIImageView alloc]initWithImage:lastImg];
+//        _windowBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Stars.jpg"]];
+    }
+    return _windowBackground;
 }
 
 /**
@@ -83,8 +103,16 @@
         HMLeftMenuViewController *leftMenuVc = [[HMLeftMenuViewController alloc] init];
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         LYTabBarCtl *mainVc = sb.instantiateInitialViewController;
-//        mainVc.view.backgroundColor = [UIColor colorWithRed:255/255.0 green:245/255.0 blue:238/255.0 alpha:1];
-        self.window.rootViewController = [HMDrawerViewController drawerWithMainVc:mainVc leftMenuVc:leftMenuVc leftWidth:self.window.frame.size.width - 70];
+//        self.window.rootViewController = [HMDrawerViewController drawerWithMainVc:mainVc leftMenuVc:leftMenuVc leftWidth:self.window.frame.size.width - 70];
+//        self.window.rootViewController = sb.instantiateInitialViewController;
+//        self.window.rootViewController = mainVc;
+        LYDrawerViewController *DrawerViewController = [LYDrawerViewController new];
+        DrawerViewController.paneViewController = mainVc;
+        [DrawerViewController setDrawerViewController:leftMenuVc forDirection:MSDynamicsDrawerDirectionLeft];
+        [DrawerViewController addStylersFromArray:@[[MSDynamicsDrawerScaleStyler styler], [MSDynamicsDrawerShadowStyler styler],[MSDynamicsDrawerFadeStyler styler]] forDirection:MSDynamicsDrawerDirectionLeft];
+        [DrawerViewController setRevealWidth:[UIScreen mainScreen].bounds.size.width - 70 forDirection:MSDynamicsDrawerDirectionLeft];
+        self.dynamicsDrawerViewController = DrawerViewController;
+        self.window.rootViewController = DrawerViewController;
     }];
 }
 

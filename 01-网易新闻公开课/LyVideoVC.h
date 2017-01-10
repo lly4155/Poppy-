@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MSDynamicsDrawerViewController.h"
 
 @interface LyVideoVC : UIViewController
-
+@property(nonatomic, strong)MSDynamicsDrawerViewController *DrawerViewController;
 @end

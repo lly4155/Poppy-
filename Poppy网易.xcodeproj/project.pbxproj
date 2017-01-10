@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0A012EE31DC046970017733D /* HyPopMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A012EE21DC046970017733D /* HyPopMenuView.m */; };
 		0A01F6631DB315880062FAFC /* SQTabbarControllerAnimatedTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A01F6621DB315880062FAFC /* SQTabbarControllerAnimatedTransitioning.m */; };
+		0A15E1391E24C80A00D73D2C /* LYDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A15E1381E24C80A00D73D2C /* LYDrawerViewController.m */; };
 		0A206FCE1D54C1AD0071A1C1 /* LyPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A206FCD1D54C1AD0071A1C1 /* LyPhotoView.m */; };
 		0A206FD61D54E8270071A1C1 /* LyPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A206FD51D54E8270071A1C1 /* LyPhotoViewController.m */; };
 		0A206FD91D562BFD0071A1C1 /* LyPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A206FD81D562BFD0071A1C1 /* LyPhotoCollectionViewCell.m */; };
@@ -188,6 +189,8 @@
 		0A012EE21DC046970017733D /* HyPopMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyPopMenuView.m; sourceTree = "<group>"; };
 		0A01F6611DB315880062FAFC /* SQTabbarControllerAnimatedTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQTabbarControllerAnimatedTransitioning.h; sourceTree = "<group>"; };
 		0A01F6621DB315880062FAFC /* SQTabbarControllerAnimatedTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQTabbarControllerAnimatedTransitioning.m; sourceTree = "<group>"; };
+		0A15E1371E24C80A00D73D2C /* LYDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYDrawerViewController.h; sourceTree = "<group>"; };
+		0A15E1381E24C80A00D73D2C /* LYDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYDrawerViewController.m; sourceTree = "<group>"; };
 		0A206FC91D54BC310071A1C1 /* LyPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LyPhotoViewController.h; sourceTree = "<group>"; };
 		0A206FCC1D54C1AD0071A1C1 /* LyPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LyPhotoView.h; sourceTree = "<group>"; };
 		0A206FCD1D54C1AD0071A1C1 /* LyPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LyPhotoView.m; sourceTree = "<group>"; };
@@ -511,6 +514,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A15E13A1E24D62800D73D2C /* oldDrawer */ = {
+			isa = PBXGroup;
+			children = (
+				0A878EA11D654334003A51FE /* HMDrawerViewController.h */,
+				0A878EA21D654334003A51FE /* HMDrawerViewController.m */,
+			);
+			name = oldDrawer;
+			sourceTree = "<group>";
+		};
 		0A206FC81D54BC100071A1C1 /* photoSet */ = {
 			isa = PBXGroup;
 			children = (
@@ -724,10 +736,11 @@
 		0A60CE7A1D5CD704008CDFE7 /* leftVC */ = {
 			isa = PBXGroup;
 			children = (
+				0A15E13A1E24D62800D73D2C /* oldDrawer */,
 				0A60CE7B1D5CD72F008CDFE7 /* HMLeftItem.h */,
 				0A60CE7C1D5CD72F008CDFE7 /* HMLeftItem.m */,
-				0A878EA11D654334003A51FE /* HMDrawerViewController.h */,
-				0A878EA21D654334003A51FE /* HMDrawerViewController.m */,
+				0A15E1371E24C80A00D73D2C /* LYDrawerViewController.h */,
+				0A15E1381E24C80A00D73D2C /* LYDrawerViewController.m */,
 				0A60CE7D1D5CD72F008CDFE7 /* HMLeftMenuViewController.h */,
 				0A60CE7E1D5CD72F008CDFE7 /* HMLeftMenuViewController.m */,
 				0AF639AC1DB4EBD3007F3CB9 /* LyWalletViewController.h */,
@@ -1334,6 +1347,7 @@
 				1FBE62771E136AE500D1F382 /* UINavigationBar+backGroundColor.m in Sources */,
 				1F1194241E126E8F0075E2E3 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				0A392DC31DA1FC5D0066E6D7 /* ViewController2.m in Sources */,
+				0A15E1391E24C80A00D73D2C /* LYDrawerViewController.m in Sources */,
 				0ABBCC2A1DEDA19C006CB571 /* UUImageAvatarBrowser.m in Sources */,
 				0ED7E0901C90750100417A6F /* HMNetworkTool.m in Sources */,
 				0A60CE801D5CD72F008CDFE7 /* HMLeftMenuViewController.m in Sources */,

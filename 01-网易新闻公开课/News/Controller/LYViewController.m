@@ -17,6 +17,7 @@
 #import "HMDrawerViewController.h"
 #import "LyMeVC.h"//其实是聊天视图，没改名
 #import "PYSearch.h"//搜索框
+#import "HMLeftMenuViewController.h"
 
 @interface LYViewController ()<UICollectionViewDelegate, UICollectionViewDataSource,LYChannelViewDelegate,PYSearchViewControllerDelegate,UINavigationControllerDelegate>
 @property (nonatomic,strong) NSMutableArray *innerNewsList;//存数据源
@@ -32,6 +33,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.DrawerViewController = (MSDynamicsDrawerViewController *)[UIApplication sharedApplication].keyWindow.rootViewController;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"top_navigation_infoicon"] style:UIBarButtonItemStylePlain target:self action:@selector(openMe:)];
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
@@ -52,9 +54,10 @@
     [self.channelView setScale:1 forIndex:0];
     
     //给collectionView添加左滑菜单
-    UIScreenEdgePanGestureRecognizer *ges = [[UIScreenEdgePanGestureRecognizer alloc]init];
-    ges = [[HMDrawerViewController sharedDrawer] addScreenEdgePanGestureRecognizerToView:self.collectionView];
-    [self.collectionView.panGestureRecognizer requireGestureRecognizerToFail:ges];
+//    UIScreenEdgePanGestureRecognizer *ges = [[UIScreenEdgePanGestureRecognizer alloc]init];
+//    ges = [[HMDrawerViewController sharedDrawer] addScreenEdgePanGestureRecognizerToView:self.collectionView];
+//    [self.collectionView.panGestureRecognizer requireGestureRecognizerToFail:ges];
+    
 }
 
 //懒加载
@@ -82,8 +85,8 @@
 
 //打开我的菜单
 -(void)openMe:(id)sender{
-    [[HMDrawerViewController sharedDrawer]openLeftMenuWithDuration:0.5 completion:^{
-        
+    [UIView animateWithDuration:0.5 animations:^{
+    [self.DrawerViewController setPaneState:MSDynamicsDrawerPaneStateOpen inDirection:MSDynamicsDrawerDirectionLeft animated:YES allowUserInterruption:YES completion:nil];
     }];
 }
 
@@ -282,11 +285,12 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-//    [self setTabBarHidden:NO];
+    //侧滑功能打开
+    self.DrawerViewController.screenEdgePanCancelsConflictingGestures = YES;
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
-//    [self setTabBarHidden:YES];
+    self.DrawerViewController.screenEdgePanCancelsConflictingGestures = NO;
 }
 
 @end

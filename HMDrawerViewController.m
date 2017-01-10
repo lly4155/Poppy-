@@ -38,14 +38,14 @@
     switch (index) {
         case 0://moment
             if (!self.flag) {
-                [self shareToWeixinSession];
+                [self shareToWeixinTimeline];
             }else{
                [self FuncFive];
             }
             break;
         case 1://wechat
             if (!self.flag) {
-                [self shareToWeixinTimeline];
+                [self shareToWeixinSession];
             }else{
                 [self FuncFive];
             }

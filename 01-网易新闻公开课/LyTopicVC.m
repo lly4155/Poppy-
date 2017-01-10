@@ -27,6 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.DrawerViewController = (MSDynamicsDrawerViewController *)[UIApplication sharedApplication].keyWindow.rootViewController;
     self.navigationController.delegate = self;
     // Do any additional setup after loading the view.
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:213/255.0 green:24/255.0 blue:37/255.0 alpha:0.8];
@@ -130,6 +131,13 @@
 
 -(void)viewWillDisappear:(BOOL)animated{
     [self.view endEditing:YES];
+    self.DrawerViewController.screenEdgePanCancelsConflictingGestures = NO;
 }
+
+-(void)viewDidAppear:(BOOL)animated{
+    //侧滑功能打开
+    self.DrawerViewController.screenEdgePanCancelsConflictingGestures = YES;
+}
+
 
 @end

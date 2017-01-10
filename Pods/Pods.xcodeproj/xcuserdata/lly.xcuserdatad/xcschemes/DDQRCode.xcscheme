@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'FC5AF0882F1C22B0A9F7D341BC4AEFD0'
+               BlueprintIdentifier = '0BC7A7D1B7A0E107A1727B2C722F3215'
                BlueprintName = 'DDQRCode'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libDDQRCode.a'>

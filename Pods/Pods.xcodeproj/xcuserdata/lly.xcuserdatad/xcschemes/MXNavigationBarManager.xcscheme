@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'B95AC616E29DFFE2ABA31736498692E9'
+               BlueprintIdentifier = 'CA3AB1024985C81AEE1E90033BE2A7AF'
                BlueprintName = 'MXNavigationBarManager'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libMXNavigationBarManager.a'>

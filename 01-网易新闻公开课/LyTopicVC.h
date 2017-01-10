@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MSDynamicsDrawerViewController.h"
 
 @interface LyTopicVC : UIViewController
-
+@property(nonatomic, strong)MSDynamicsDrawerViewController *DrawerViewController;
 @property (weak, nonatomic) UITextField *result;
 @end

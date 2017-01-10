@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MSDynamicsDrawerViewController.h"
 
 @interface LYViewController : UIViewController
-
+@property(nonatomic, strong)MSDynamicsDrawerViewController *DrawerViewController;
 @end
